@@ -1,5 +1,6 @@
 #include "pca9685.h"
 
+
 #include <math.h>
 #include <assert.h>
 #include <string.h>
@@ -155,7 +156,7 @@ bool pca9685_wakeup(pca9685_handle_t *handle)
 	if (restart_required) {
 
 		// Oscillator requires at least 500us to stabilise, so wait 1ms.
-		osDelay(1);
+        vTaskDelay(1);
 
 		PCA9685_SET_BIT_MASK(mode1_reg, PCA9685_REGISTER_MODE1_RESTART);
 		success &= pca9685_write_u8(handle, PCA9685_REGISTER_MODE1, mode1_reg);

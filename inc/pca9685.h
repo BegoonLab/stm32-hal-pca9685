@@ -1,7 +1,6 @@
 #pragma once
 
 #include "main.h"
-#include "cmsis_os.h"
 #include "stm32l4xx_hal.h"
 #include <stdbool.h>
 
